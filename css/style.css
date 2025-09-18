@@ -19,18 +19,35 @@ body {
     color: white;
     text-align: center;
     padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-#home h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
 }
 
-#home p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+.header-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.header-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .cta-btn {
@@ -41,6 +58,8 @@ body {
     font-size: 1.1em;
     border-radius: 30px;
     transition: background 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
 }
 
 .cta-btn:hover {
@@ -50,6 +69,17 @@ body {
 @keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -67,22 +97,12 @@ body {
     animation: slideIn 1s forwards;
 }
 
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .about-content {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    flex-wrap: wrap;
 }
 
 .about-content .text {
@@ -90,12 +110,14 @@ body {
     text-align: left;
     opacity: 0;
     animation: fadeIn 2s forwards;
+    margin-bottom: 20px;
 }
 
 .about-content .image img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 /* --- SEÇÃO PROJETOS --- */
@@ -127,11 +149,12 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 350px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project h3 {
@@ -152,15 +175,6 @@ body {
 
 .project a:hover {
     text-decoration: underline;
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 /* --- SEÇÃO HABILIDADES --- */
@@ -229,6 +243,7 @@ form button {
     font-size: 1.2em;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 20px;
 }
 
 form button:hover {
@@ -242,4 +257,102 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+/* --- RESPONSIVO --- */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project {
+        max-width: 100%;
+    }
+
+    .skills {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skill {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    form input,
+    form textarea {
+        padding: 12px;
+    }
+
+    form button {
+        width: 80%;
+        padding: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #home h1 {
+        font-size: 2em;
+    }
+
+    #home p {
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    form button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .header-image img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* --- ANIMAÇÕES ADICIONAIS --- */
+
+/* Animações para os elementos que entram na tela */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito de Hover na Imagem */
+.header-image img {
+    transition: transform 0.3s ease;
 }
