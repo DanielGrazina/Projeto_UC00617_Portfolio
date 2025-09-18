@@ -41,6 +41,8 @@ body {
     font-size: 1.1em;
     border-radius: 30px;
     transition: background 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
 }
 
 .cta-btn:hover {
@@ -91,12 +93,14 @@ body {
     text-align: left;
     opacity: 0;
     animation: fadeIn 2s forwards;
+    margin-bottom: 20px;
 }
 
 .about-content .image img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 /* --- SEÇÃO PROJETOS --- */
@@ -128,11 +132,12 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 350px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project h3 {
@@ -153,7 +158,6 @@ body {
 
 .project a:hover {
     text-decoration: underline;
-
 }
 
 /* --- SEÇÃO HABILIDADES --- */
@@ -222,6 +226,7 @@ form button {
     font-size: 1.2em;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 20px;
 }
 
 form button:hover {
