@@ -1,0 +1,245 @@
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* --- SEÇÃO HOME --- */
+#home {
+    background: #3b3b5c;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+#home p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #e67e22;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- SEÇÃO SOBRE --- */
+#sobre {
+    background: #2c2c3f;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.about-content .text {
+    flex: 1;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.about-content .image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* --- SEÇÃO PROJETOS --- */
+#projetos {
+    background: #1e1e2f;
+    padding: 60px 20px;
+}
+
+#projetos h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.project {
+    background: #3b3b5c;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.project p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.project a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --- SEÇÃO HABILIDADES --- */
+#habilidades {
+    background: #2c2c3f;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#habilidades h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.skill:hover {
+    background: #e67e22;
+}
+
+/* --- SEÇÃO CONTACTO --- */
+#contacto {
+    background: #1e1e2f;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form button {
+    background: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #e67e22;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #3b3b5c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
