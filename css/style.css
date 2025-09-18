@@ -83,6 +83,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
+    flex-wrap: wrap;
 }
 
 .about-content .text {
@@ -152,15 +153,7 @@ body {
 
 .project a:hover {
     text-decoration: underline;
-}
 
-@keyframes zoomIn {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 /* --- SEÇÃO HABILIDADES --- */
@@ -242,4 +235,83 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+/* --- RESPONSIVO --- */
+
+@media only screen and (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5em;
+    }
+
+    #home p {
+        font-size: 1.1em;
+    }
+
+    #sobre h2, #projetos h2, #habilidades h2, #contacto h2 {
+        font-size: 2em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content .image img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project {
+        max-width: 100%;
+    }
+
+    .skills {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skill {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    form input,
+    form textarea {
+        padding: 12px;
+    }
+
+    form button {
+        width: 80%;
+        padding: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #home h1 {
+        font-size: 2em;
+    }
+
+    #home p {
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    form button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
 }
